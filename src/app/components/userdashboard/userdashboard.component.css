@@ -1,0 +1,14 @@
+nav{
+    height: 700px;
+    position: relative;
+    margin-left: -50px;
+    position: sticky;
+    top:0px;
+}
+ul{
+    margin-top: -180px;
+    margin-left: 50px;
+}
+ul>li{
+    margin-top:20px;
+}

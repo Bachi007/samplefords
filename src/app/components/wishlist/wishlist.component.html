@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Sno</th>
+        <th>Vehicle Name</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Manage</th>
+    </tr>
+    <tr *ngFor="let w of wishlist;index as i">
+        <td>{{i+1}}</td>
+        <td>{{w.vehicleCompany}} {{w.vehicleName}}</td>
+        <td>{{w.vehiclePrice}}</td>
+        <td><img [src]="w.vehicleImage" height="100" width="100" alt=""></td>
+        <td><button class="btn btn-danger">Delete</button></td>
+    </tr>
+</table>

@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <img [src]="newvehicle.vehicleImage" alt="" class="card-img-top">
+                <h1 class="card-title">{{newvehicle.vehicleCompany}} {{newvehicle.vehicleName}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1>{{newvehicle.vehicleCompany}} {{newvehicle.vehicleName}}</h1>
+                    <p>{{newvehicle.vehicleDescription}}</p>
+                    <h3>Price : {{newvehicle.vehiclePrice | currency:'INR'}}</h3>
+                    <button class="btn btn-warning" (click)="additemtowishlist()" >Add to wishlist</button>
+                    <button class="btn btn-success" data-bs-toggle="modal" 
+                    data-bs-target="#bookingmodal">Buy Now</button>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="modal fade" id="bookingmodal">
+    <div class="modal-dialog">  
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>Book Now</h1>
+                <button class="btn btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" (ngSubmit)="confirmorder()">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="" class="form-label">Vehicle Id</label>
+                            <input type="text" name="vid" [(ngModel)]="newvehicle.vehicleId" class="form-control" disabled="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="" class="form-label">Vehicle Name</label>
+                            <input type="text" name="vname" [(ngModel)]="newvehicle.vehicleName" class="form-control" disabled="">  
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="" class="form-label">Vehicle Price</label>
+                            <input type="text" name="vprice" [(ngModel)]="newvehicle.vehiclePrice" class="form-control" disabled="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="" class="form-label">username</label>
+                            <input type="text" name="uname" [(ngModel)]="username" class="form-control" disabled="">  
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="" class="form-label">Address</label>
+                            <input type="text" name="adr" [(ngModel)]="address" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="" class="form-label">Phone</label>
+                            <input type="text" name="phone" [(ngModel)]="phone" class="form-control">  
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="btn btn-primary" type="submit" data-bs-dismiss="modal">Confirm Order</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+
+    </div>
+
+
+</div>
